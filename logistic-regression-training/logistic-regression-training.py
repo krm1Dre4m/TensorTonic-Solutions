@@ -17,8 +17,9 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
     for i in range(0, steps):
         p = _sigmoid(X @ w + b)
 
-        grad_w = X.T @ (p - y) / n
-        grad_b = float(np.sum(p - y) / n)
+        loss = p - y
+        grad_w = X.T @ (loss) / n
+        grad_b = float(np.sum(loss) / n)
 
         w -= lr * grad_w
         b -= lr * grad_b
