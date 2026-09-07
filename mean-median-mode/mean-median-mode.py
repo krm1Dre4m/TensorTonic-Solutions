@@ -5,8 +5,6 @@ def mean_median_mode(x: list) -> dict:
     """
     Returns a dictionary with mean, median, and mode.
     """
-    if not x:
-        raise ValueError("Input list cannot be empty.")
 
     x_arr = np.asarray(x)
     
